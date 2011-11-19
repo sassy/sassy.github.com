@@ -4,7 +4,7 @@
   <title><![CDATA[Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-20T01:38:59+09:00</updated>
+  <updated>2011-11-20T02:09:42+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -12,5 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[First Article]]></title>
+    <link href="http://sassy.github.com/blog/2011/11/20/first-article/"/>
+    <updated>2011-11-20T01:42:00+09:00</updated>
+    <id>http://sassy.github.com/blog/2011/11/20/first-article</id>
+    <content type="html"><![CDATA[<h2>Octopress+GitHubでブログたててみました。</h2>
+
+<p><img src="http://sassy.github.com/path/to/twitter.png" alt="twitter" /></p>
+
+<p><a href="http://twitter.com/#!/omo2009/status/137904652208451584">とある事情</a>により、Octopressを使ってみることにしました。
+以下を参考にしました。</p>
+
+<blockquote><p><a href="http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/">http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/</a></p></blockquote>
+
+<p>Ocropressのサイトは以下です。</p>
+
+<blockquote><p><a href="http://octopress.org/">http://octopress.org/</a></p></blockquote>
+
+<p>ちなみに私のMacのrubyのversionは1.8.7だったので、せっかくなので、rvmを導入しました。
+以下を参考にインストール</p>
+
+<blockquote><p><a href="https://rvm.beginrescueend.com/rvm/install/">https://rvm.beginrescueend.com/rvm/install/</a></p></blockquote>
+]]></content>
+  </entry>
   
 </feed>
