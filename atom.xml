@@ -4,7 +4,7 @@
   <title><![CDATA[Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-20T02:11:49+09:00</updated>
+  <updated>2011-11-20T02:12:53+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -19,8 +19,6 @@
     <updated>2011-11-20T01:42:00+09:00</updated>
     <id>http://sassy.github.com/blog/2011/11/20/first-article</id>
     <content type="html"><![CDATA[<h2>Octopress+GitHubでブログたててみました。</h2>
-
-<p><img src="./twitter.png" alt="twitter" /></p>
 
 <p><a href="http://twitter.com/#!/omo2009/status/137904652208451584">とある事情</a>により、Octopressを使ってみることにしました。
 以下を参考にしました。</p>
