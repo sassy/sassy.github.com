@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-20T01:32:59+09:00</updated>
+  <updated>2011-11-20T01:38:59+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Satoshi Watanabe]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
