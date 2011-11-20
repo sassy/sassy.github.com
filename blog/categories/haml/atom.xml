@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Haml | Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/blog/categories/haml/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-20T16:13:30+09:00</updated>
+  <updated>2011-11-20T16:25:21+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -216,12 +216,10 @@ $side : top;</p>
 <h1>footer {</h1>
 
 <p>  border-top-radius: 10px; }
-```</p>
-
-<h1>navar liと#footerはmixinで定義された内容が入っている。</h1>
-
-<p>** ミックスインでは、引数も設定可能
-```
+<code>
+`#navar li`と`#footer`はmixinで定義された内容が入っている。
+** ミックスインでは、引数も設定可能
+</code>
 @mixin round-top($side) {
   $radius : 10px;
   border-#{$side}-radius: $radius;

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: LESS | Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/blog/categories/less/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-20T16:13:30+09:00</updated>
+  <updated>2011-11-20T16:25:21+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -18,7 +18,9 @@
     <link href="http://sassy.github.com/blog/2011/11/20/less/"/>
     <updated>2011-11-20T15:58:00+09:00</updated>
     <id>http://sassy.github.com/blog/2011/11/20/less</id>
-    <content type="html"><![CDATA[<h2>LESS</h2>
+    <content type="html"><![CDATA[<p><img src="http://lesscss.org/images/logo.png" title="'logo'" ></p>
+
+<h2>LESS</h2>
 
 <ul>
 <li>The dynamic stylesheet language.</li>
