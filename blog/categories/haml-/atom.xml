@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Haml, | Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/blog/categories/haml-/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-20T15:31:06+09:00</updated>
+  <updated>2011-11-20T15:53:44+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -18,7 +18,7 @@
     <link href="http://sassy.github.com/blog/2011/11/20/haml/"/>
     <updated>2011-11-20T15:06:00+09:00</updated>
     <id>http://sassy.github.com/blog/2011/11/20/haml</id>
-    <content type="html"><![CDATA[<h3>Hamlとは</h3>
+    <content type="html"><![CDATA[<h2>Hamlとは</h2>
 
 <ul>
 <li>HTMLを生成するためのマークアップ言語
@@ -37,7 +37,7 @@
 
 ```
 
-<h3>Sassとは</h3></li>
+<h2>Sassとは</h2></li>
 <li>CSSを生成するためのメタ言語
 ```
   h1
@@ -49,16 +49,16 @@
 </ul>
 
 
-<h3>インストール</h3>
+<h2>Haml/Sassのインストール</h2>
 
 <p>rubyのgemを使う
 <code>
 gem install haml
 </code></p>
 
-<h3>SassとSCSS</h3>
+<h2>SassとSCSS</h2>
 
-<h4>Sass</h4>
+<h3>Sass</h3>
 
 <ul>
 <li>インデントを使った構文
@@ -67,12 +67,12 @@ h1
 :color red
 </code>
 
-<h4>SCSS(Sassy CSS)</h4></li>
+<h3>SCSS(Sassy CSS)</h3></li>
 <li>CSSの構文を拡張したもの</li>
 </ul>
 
 
-<h3>Sass(SCSS)の使い方</h3>
+<h2>Sass(SCSS)の使い方</h2>
 
 <p>style.scssをstyle.cssに変換するには、
 <code>
@@ -80,19 +80,167 @@ sass --watch style:scss:style.css
 </code>
 とコマンドする(これをやっておけば、style.scssファイルを変更すれば勝手に、style.cssに変更される)</p>
 
-<h3>SCSSとCSSの違い</h3>
+<h2>SCSSとCSSの違い</h2>
 
 <ul>
-<li>ネストが使える</li>
-<li>変数が定義できる</li>
-<li>式や関数</li>
-<li>インターポレーション
-** <code>#{$foo}</code>で変数をセレクタ等に利用できる</li>
-<li>ミックスイン
-<strong> @mixinでくくったスタイルを @includeで再利用可能
-</strong> ミックスインでは、引数も設定可能</li>
+<li>ネストが使える
+```
+
+<h1>navbar {</h1>
+
+width : 8px;
+height : 23px;
+ul { list-style-type: none; }
+}
+<code>
+を変換すると、
+</code>
+
+<h1>navbar {</h1>
+
+width: 8px;
+height: 23px; }
+
+<h1>navbar ul {</h1>
+
+<p>  list-style-type: none; }
+```
+ネストされたものが、解決したものを生成</p></li>
+<li>変数が定義できる
+```
+
+<h1>navbar {</h1>
+
+$navar-width : 800px; /<em> 変数 </em>/
+width : $navar-width;  /<em> 変数を使う </em>/
+height : 23px;
+}
+<code>
+を変換すると、
+</code>
+@charset "UTF-8";
+
+<h1>navbar {</h1>
+
+<p>/<em> 変数 </em>/
+width: 800px;
+/<em> 変数を使う </em>/
+height: 23px; }</p></li>
 </ul>
 
+
+<p><code>
+変数が解決されたものが生成(charsetはコメントに日本語を使ったから)
+* 式や関数
+</code></p>
+
+<h1>navbar {</h1>
+
+<p>  $navar-width : 800px; /<em> 変数 </em>/
+  width : $navar-width / 2 + 100;  /<em> 式を使って計算 </em>/
+  height : 23px;
+}
+<code>
+を変換すると、
+</code>
+@charset "UTF-8";</p>
+
+<h1>navbar {</h1>
+
+<p>  /<em> 変数 </em>/
+  width: 500px;
+  /<em> 式を使って計算 </em>/
+  height: 23px; }
+<code>
+変数を解決。
+また、
+</code></p>
+
+<h1>navbar {</h1>
+
+<p>  $navbar-color : #ce4dd6;
+  background-color : lighten($navbar-color, 20%); /<em> 用意されたlighten()関数を使う </em>/
+}
+<code>
+を変換すると、
+</code>
+@charset "UTF-8";</p>
+
+<h1>navbar {</h1>
+
+<p>  background-color: #e5a0e9;
+  /<em> 用意されたlighten()関数を使う </em>/ }
+<code>
+となる。lighten()をいう関数を処理した結果が生成される。
+* インターポレーション
+** `#{$foo}`で変数をセレクタ等に利用できる
+</code>
+$side : top;</p>
+
+<h1>round {</h1>
+
+<pre><code>border-#{$side}-radius: 10px;
+</code></pre>
+
+<p>}
+<code>
+は、
+</code></p>
+
+<h1>round {</h1>
+
+<p>  border-top-radius: 10px; }
+<code>
+と解決
+* ミックスイン
+** @mixinでくくったスタイルを @includeで再利用可能
+</code>
+@mixin round-top {
+  $side : top;
+  $radius : 10px;
+  border-#{$side}-radius: $radius;
+}</p>
+
+<h1>navbar li { @include round-top;}</h1>
+
+<h1>footer { @include round-top;}</h1>
+
+<p><code>
+とすると、
+</code></p>
+
+<h1>navbar li {</h1>
+
+<p>  border-top-radius: 10px; }</p>
+
+<h1>footer {</h1>
+
+<p>  border-top-radius: 10px; }
+```</p>
+
+<h1>navar liと#footerはmixinで定義された内容が入っている。</h1>
+
+<p>** ミックスインでは、引数も設定可能
+```
+@mixin round-top($side) {
+  $radius : 10px;
+  border-#{$side}-radius: $radius;
+}</p>
+
+<h1>navbar li { @include round-top(top);}</h1>
+
+<p><code>
+は、引数$siteを受け取って変換する
+</code></p>
+
+<h1>navbar li {</h1>
+
+<p>  border-top-radius: 10px; }
+```</p>
+
+<h2>参照</h2>
+
+<p>http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html</p>
 ]]></content>
   </entry>
   

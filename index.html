@@ -19,7 +19,7 @@
 %html %head %title Hello,Haml!
 %body %1h1 Hello, Haml! Sassとは CSSを生成するためのメタ言語 1
 2
-h1 :color red インストール &hellip;">
+h1 :color red Haml/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -101,7 +101,7 @@ h1 :color red インストール &hellip;">
   </header>
 
 
-  <div class="entry-content"><h3>Hamlとは</h3>
+  <div class="entry-content"><h2>Hamlとは</h2>
 
 <ul>
 <li>HTMLを生成するためのマークアップ言語</li>
@@ -122,7 +122,7 @@ h1 :color red インストール &hellip;">
 </span><span class='line'>  %1h1 Hello, Haml!</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Sassとは</h3>
+<h2>Sassとは</h2>
 
 <ul>
 <li>CSSを生成するためのメタ言語</li>
@@ -135,7 +135,7 @@ h1 :color red インストール &hellip;">
 </span><span class='line'>  :color red</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>インストール</h3>
+<h2>Haml/Sassのインストール</h2>
 
 <p>rubyのgemを使う</p>
 
@@ -143,9 +143,9 @@ h1 :color red インストール &hellip;">
 </pre></td><td class='code'><pre><code class=''><span class='line'>gem install haml</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>SassとSCSS</h3>
+<h2>SassとSCSS</h2>
 
-<h4>Sass</h4>
+<h3>Sass</h3>
 
 <ul>
 <li>インデントを使った構文</li>
@@ -158,14 +158,14 @@ h1 :color red インストール &hellip;">
 </span><span class='line'>  :color red</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>SCSS(Sassy CSS)</h4>
+<h3>SCSS(Sassy CSS)</h3>
 
 <ul>
 <li>CSSの構文を拡張したもの</li>
 </ul>
 
 
-<h3>Sass(SCSS)の使い方</h3>
+<h2>Sass(SCSS)の使い方</h2>
 
 <p>style.scssをstyle.cssに変換するには、</p>
 
@@ -175,19 +175,212 @@ h1 :color red インストール &hellip;">
 
 <p>とコマンドする(これをやっておけば、style.scssファイルを変更すれば勝手に、style.cssに変更される)</p>
 
-<h3>SCSSとCSSの違い</h3>
+<h2>SCSSとCSSの違い</h2>
 
 <ul>
 <li>ネストが使える</li>
-<li>変数が定義できる</li>
-<li>式や関数</li>
-<li>インターポレーション
-** <code>#{$foo}</code>で変数をセレクタ等に利用できる</li>
-<li>ミックスイン
-<strong> @mixinでくくったスタイルを @includeで再利用可能
-</strong> ミックスインでは、引数も設定可能</li>
 </ul>
 
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#navbar {
+</span><span class='line'>  width : 8px;
+</span><span class='line'>  height : 23px;
+</span><span class='line'>  ul { list-style-type: none; }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>を変換すると、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#navbar {
+</span><span class='line'>  width: 8px;
+</span><span class='line'>  height: 23px; }
+</span><span class='line'>  #navbar ul {
+</span><span class='line'>    list-style-type: none; }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ネストされたものが、解決したものを生成
+* 変数が定義できる</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#navbar {
+</span><span class='line'>  $navar-width : 800px; /* 変数 */
+</span><span class='line'>  width : $navar-width;  /* 変数を使う */
+</span><span class='line'>  height : 23px;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>を変換すると、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@charset "UTF-8";
+</span><span class='line'>#navbar {
+</span><span class='line'>  /* 変数 */
+</span><span class='line'>  width: 800px;
+</span><span class='line'>  /* 変数を使う */
+</span><span class='line'>  height: 23px; }
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>変数が解決されたものが生成(charsetはコメントに日本語を使ったから)
+* 式や関数</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#navbar {
+</span><span class='line'>  $navar-width : 800px; /* 変数 */
+</span><span class='line'>  width : $navar-width / 2 + 100;  /* 式を使って計算 */
+</span><span class='line'>  height : 23px;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>を変換すると、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@charset "UTF-8";
+</span><span class='line'>#navbar {
+</span><span class='line'>  /* 変数 */
+</span><span class='line'>  width: 500px;
+</span><span class='line'>  /* 式を使って計算 */
+</span><span class='line'>  height: 23px; }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>変数を解決。
+また、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#navbar {
+</span><span class='line'>  $navbar-color : #ce4dd6;
+</span><span class='line'>  background-color : lighten($navbar-color, 20%); /* 用意されたlighten()関数を使う */
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>を変換すると、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@charset "UTF-8";
+</span><span class='line'>#navbar {
+</span><span class='line'>  background-color: #e5a0e9;
+</span><span class='line'>  /* 用意されたlighten()関数を使う */ }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>となる。lighten()をいう関数を処理した結果が生成される。
+* インターポレーション
+** <code>#{$foo}</code>で変数をセレクタ等に利用できる</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$side : top;
+</span><span class='line'>#round {
+</span><span class='line'>    border-#{$side}-radius: 10px;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>は、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#round {
+</span><span class='line'>  border-top-radius: 10px; }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と解決
+* ミックスイン
+** @mixinでくくったスタイルを @includeで再利用可能</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@mixin round-top {
+</span><span class='line'>  $side : top;
+</span><span class='line'>  $radius : 10px;
+</span><span class='line'>  border-#{$side}-radius: $radius;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>#navbar li { @include round-top;}
+</span><span class='line'>#footer { @include round-top;}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>とすると、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#navbar li {
+</span><span class='line'>  border-top-radius: 10px; }
+</span><span class='line'>
+</span><span class='line'>#footer {
+</span><span class='line'>  border-top-radius: 10px; }</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>navar liと#footerはmixinで定義された内容が入っている。</h1>
+
+<p>** ミックスインでは、引数も設定可能</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@mixin round-top($side) {
+</span><span class='line'>  $radius : 10px;
+</span><span class='line'>  border-#{$side}-radius: $radius;
+</span><span class='line'>}
+</span><span class='line'>#navbar li { @include round-top(top);}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>は、引数$siteを受け取って変換する</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#navbar li {
+</span><span class='line'>  border-top-radius: 10px; }</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>参照</h2>
+
+<p>http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html</p>
 </div>
   
   
