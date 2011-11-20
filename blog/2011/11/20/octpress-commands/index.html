@@ -5,12 +5,18 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>First Article - Sassy Memo Blog</title>
+  <title>[Memo]Octpressのコマンド - Sassy Memo Blog</title>
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="Octopress+GitHubでブログたててみました。 とある事情により、
-Octopressを使ってみることにしました。 以下を参考にしました。 http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/ &hellip;">
+  <meta name="description" content="新規記事の投稿 1
+rake new_post["(title名)"] 記事のデプロイ 1
+rake gen_deploy 記事のプレビュー 1
+2
+rake generate
+rake preview `
+記事のプレビューはhttp://localhost:4000 でチェック
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +25,7 @@ Octopressを使ってみることにしました。 以下を参考にしまし�
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sassy.github.com/blog/2011/11/20/first-article">
+  <link rel="canonical" href="http://sassy.github.com/blog/2011/11/20/octpress-commands">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -66,7 +72,7 @@ Octopressを使ってみることにしました。 以下を参考にしまし�
   
   <header>
     
-      <h1 class="entry-title">First Article</h1>
+      <h1 class="entry-title">[Memo]Octpressのコマンド</h1>
     
     
       <p class="meta">
@@ -82,30 +88,35 @@ Octopressを使ってみることにしました。 以下を参考にしまし�
   
 
 
-<time datetime="2011-11-20T01:42:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
+<time datetime="2011-11-20T14:53:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>Octopress+GitHubでブログたててみました。</h2>
+<div class="entry-content"><p>新規記事の投稿</p>
 
-<p><a href="http://twitter.com/#!/omo2009/status/137904652208451584">とある事情</a>により、
-Octopressを使ってみることにしました。</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["(title名)"]</span></code></pre></td></tr></table></div></figure>
 
-<p>以下を参考にしました。</p>
 
-<blockquote><p><a href="http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/">http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/</a></p></blockquote>
+<p>記事のデプロイ</p>
 
-<p>Ocropressのサイトは以下です。</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake gen_deploy</span></code></pre></td></tr></table></div></figure>
 
-<blockquote><p><a href="http://octopress.org/">http://octopress.org/</a></p></blockquote>
 
-<p>ちなみに私のMacのrubyのversionは1.8.7だったので、せっかくなので、rvmを導入しました。
-以下を参考にインストール</p>
+<p>記事のプレビュー</p>
 
-<blockquote><p><a href="https://rvm.beginrescueend.com/rvm/install/">https://rvm.beginrescueend.com/rvm/install/</a></p></blockquote>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<p>`
+記事のプレビューはhttp://localhost:4000 でチェック</p>
 </div>
 
 
@@ -128,15 +139,21 @@ Octopressを使ってみることにしました。</p>
   
 
 
-<time datetime="2011-11-20T01:42:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
+<time datetime="2011-11-20T14:53:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sassy.github.com/blog/2011/11/20/first-article/" data-via="" data-counturl="http://sassy.github.com/blog/2011/11/20/first-article/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sassy.github.com/blog/2011/11/20/octpress-commands/" data-via="" data-counturl="http://sassy.github.com/blog/2011/11/20/octpress-commands/" >Tweet</a>
   
   
   
@@ -145,8 +162,8 @@ Octopressを使ってみることにしました。</p>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2011/11/20/first-article/" title="Previous Post: First Article">&laquo; First Article</a>
       
-        <a class="basic-alignment right" href="/blog/2011/11/20/octpress-commands/" title="next Post: [Memo]Octpressのコマンド">[Memo]Octpressのコマンド &raquo;</a>
       
     </p>
   </footer>
