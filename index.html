@@ -9,17 +9,12 @@
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="Hamlとは HTMLを生成するためのマークアップ言語 1
-2
-3
-4
-5
-6
-!!!
-%html %head %title Hello,Haml!
-%body %1h1 Hello, Haml! Sassとは CSSを生成するためのメタ言語 1
-2
-h1 :color red Haml/ &hellip;">
+  <meta name="description" content="LESS The dynamic stylesheet language.
+要するに、CSSのメタ言語
+JavaScriptで実装される LESSのメリット ネスト
+変数
+ミックスイン
+演算／関数 要するに、SCSSでメリットだったことがメリット LESSを使うには クライアントサイド less. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -72,6 +67,159 @@ h1 :color red Haml/ &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/20/less/">LESSって何?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-20T15:58:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>LESS</h2>
+
+<ul>
+<li>The dynamic stylesheet language.</li>
+<li>要するに、CSSのメタ言語</li>
+<li>JavaScriptで実装される</li>
+</ul>
+
+
+<h2>LESSのメリット</h2>
+
+<ul>
+<li>ネスト</li>
+<li>変数</li>
+<li>ミックスイン</li>
+<li>演算／関数</li>
+</ul>
+
+
+<p>要するに、SCSSでメリットだったことがメリット</p>
+
+<h2>LESSを使うには</h2>
+
+<h3>クライアントサイド</h3>
+
+<p>less.jsを持って来て</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;link rel="stylesheet/less" type="text/css" href="styles.less"&gt;
+</span><span class='line'>&lt;script src="less.js" type="text/javascript"&gt;&lt;/script&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>を書く。</p>
+
+<h3>サーバーサイド(node.js)</h3>
+
+<p>インストールは</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>npm install less</span></code></pre></td></tr></table></div></figure>
+
+
+<p>あとは、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var less = require('less');
+</span><span class='line'>
+</span><span class='line'>less.render('.class { width: 1 + 1 }', function (e, css) {
+</span><span class='line'>    console.log(css);
+</span><span class='line'>});</span></code></pre></td></tr></table></div></figure>
+
+
+<p>のように使えば、生成される。</p>
+
+<h2>LESSの文法</h2>
+
+<ul>
+<li>変数</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@nice-blue : #5B83AD;
+</span><span class='line'>#header {
+</span><span class='line'>  color : @nice-blue;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>とすれば、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#header { color : #5B83AD;}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>となる
+* ミックスイン</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>.bordered {
+</span><span class='line'>  border-top : dotteed 1px black;
+</span><span class='line'>}
+</span><span class='line'>#menu a {
+</span><span class='line'>  color : #111;
+</span><span class='line'>  .bordered;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と書けば</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#menu a {
+</span><span class='line'>  color : #111;
+</span><span class='line'>  border-top : dotteed 1px black;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と.borderedがきちんと解決されて出力</p>
+
+<h2>参照</h2>
+
+<p>http://lesscss.org/#-client-side-usage</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -507,6 +655,10 @@ Octopressを使ってみることにしました。</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/20/less/">LESSって何?</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2011/11/20/haml/">Haml/Sassについて</a>
