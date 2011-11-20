@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>First Article - Sassy Memo Blog</title>
+  <title>Haml/Sassについて - Sassy Memo Blog</title>
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="Octopress+GitHubでブログたててみました。 とある事情により、
-Octopressを使ってみることにしました。 以下を参考にしました。 http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/ &hellip;">
+  <meta name="description" content="Hamlとは HTMLを生成するためのマークアップ言語 !!! %html %head %title Hello,Haml! %body %1h1 Hello, Haml! Sassとは CSSを生成するためのメタ言語 h1 :color red ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Octopressを使ってみることにしました。 以下を参考にしまし�
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sassy.github.com/blog/2011/11/20/first-article">
+  <link rel="canonical" href="http://sassy.github.com/blog/2011/11/20/haml">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -66,7 +65,7 @@ Octopressを使ってみることにしました。 以下を参考にしまし�
   
   <header>
     
-      <h1 class="entry-title">First Article</h1>
+      <h1 class="entry-title">Haml/Sassについて</h1>
     
     
       <p class="meta">
@@ -82,30 +81,41 @@ Octopressを使ってみることにしました。 以下を参考にしまし�
   
 
 
-<time datetime="2011-11-20T01:42:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
+<time datetime="2011-11-20T15:06:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>Octopress+GitHubでブログたててみました。</h2>
+<div class="entry-content"><h3>Hamlとは</h3>
 
-<p><a href="http://twitter.com/#!/omo2009/status/137904652208451584">とある事情</a>により、
-Octopressを使ってみることにしました。</p>
+<ul>
+<li>HTMLを生成するためのマークアップ言語
+  !!!
+  %html
 
-<p>以下を参考にしました。</p>
+<pre><code>%head
+  %title Hello,Haml!
+</code></pre>
 
-<blockquote><p><a href="http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/">http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/</a></p></blockquote>
+  %body
 
-<p>Ocropressのサイトは以下です。</p>
+<pre><code>%1h1 Hello, Haml!
+</code></pre></li>
+</ul>
 
-<blockquote><p><a href="http://octopress.org/">http://octopress.org/</a></p></blockquote>
 
-<p>ちなみに私のMacのrubyのversionは1.8.7だったので、せっかくなので、rvmを導入しました。
-以下を参考にインストール</p>
+<h3>Sassとは</h3>
 
-<blockquote><p><a href="https://rvm.beginrescueend.com/rvm/install/">https://rvm.beginrescueend.com/rvm/install/</a></p></blockquote>
+<ul>
+<li>CSSを生成するためのメタ言語
+  h1
+
+<pre><code>:color red
+</code></pre></li>
+</ul>
+
 </div>
 
 
@@ -128,15 +138,21 @@ Octopressを使ってみることにしました。</p>
   
 
 
-<time datetime="2011-11-20T01:42:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
+<time datetime="2011-11-20T15:06:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/haml-/'>Haml,</a>, <a class='category' href='/blog/categories/sass/'>Sass</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sassy.github.com/blog/2011/11/20/first-article/" data-via="" data-counturl="http://sassy.github.com/blog/2011/11/20/first-article/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sassy.github.com/blog/2011/11/20/haml/" data-via="" data-counturl="http://sassy.github.com/blog/2011/11/20/haml/" >Tweet</a>
   
   
   
@@ -145,8 +161,8 @@ Octopressを使ってみることにしました。</p>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2011/11/20/octpress-commands/" title="Previous Post: [Memo]Octpressのコマンド">&laquo; [Memo]Octpressのコマンド</a>
       
-        <a class="basic-alignment right" href="/blog/2011/11/20/octpress-commands/" title="next Post: [Memo]Octpressのコマンド">[Memo]Octpressのコマンド &raquo;</a>
       
     </p>
   </footer>

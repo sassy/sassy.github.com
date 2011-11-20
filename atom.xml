@@ -4,7 +4,7 @@
   <title><![CDATA[Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-20T14:56:52+09:00</updated>
+  <updated>2011-11-20T15:12:09+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -12,6 +12,42 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Haml/Sassについて]]></title>
+    <link href="http://sassy.github.com/blog/2011/11/20/haml/"/>
+    <updated>2011-11-20T15:06:00+09:00</updated>
+    <id>http://sassy.github.com/blog/2011/11/20/haml</id>
+    <content type="html"><![CDATA[<h3>Hamlとは</h3>
+
+<ul>
+<li>HTMLを生成するためのマークアップ言語
+  !!!
+  %html
+
+<pre><code>%head
+  %title Hello,Haml!
+</code></pre>
+
+  %body
+
+<pre><code>%1h1 Hello, Haml!
+</code></pre></li>
+</ul>
+
+
+<h3>Sassとは</h3>
+
+<ul>
+<li>CSSを生成するためのメタ言語
+  h1
+
+<pre><code>:color red
+</code></pre></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[[Memo]Octpressのコマンド]]></title>
@@ -38,8 +74,7 @@
 </span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
 
 
-<p>`
-記事のプレビューはhttp://localhost:4000 でチェック</p>
+<p>記事のプレビューはhttp://localhost:4000 でチェック</p>
 ]]></content>
   </entry>
   

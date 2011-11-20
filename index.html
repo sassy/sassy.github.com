@@ -9,14 +9,7 @@
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="新規記事の投稿 1
-rake new_post["(title名)"] 記事のデプロイ 1
-rake gen_deploy 記事のプレビュー 1
-2
-rake generate
-rake preview `
-記事のプレビューはhttp://localhost:4000 でチェック
-">
+  <meta name="description" content="Hamlとは HTMLを生成するためのマークアップ言語 !!! %html %head %title Hello,Haml! %body %1h1 Hello, Haml! Sassとは CSSを生成するためのメタ言語 h1 :color red ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +68,69 @@ rake preview `
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2011/11/20/haml/">Haml/Sassについて</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-20T15:06:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Hamlとは</h3>
+
+<ul>
+<li>HTMLを生成するためのマークアップ言語
+  !!!
+  %html
+
+<pre><code>%head
+  %title Hello,Haml!
+</code></pre>
+
+  %body
+
+<pre><code>%1h1 Hello, Haml!
+</code></pre></li>
+</ul>
+
+
+<h3>Sassとは</h3>
+
+<ul>
+<li>CSSを生成するためのメタ言語
+  h1
+
+<pre><code>:color red
+</code></pre></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2011/11/20/octpress-commands/">[Memo]Octpressのコマンド</a></h1>
     
     
@@ -118,8 +174,7 @@ rake preview `
 </span><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
 
 
-<p>`
-記事のプレビューはhttp://localhost:4000 でチェック</p>
+<p>記事のプレビューはhttp://localhost:4000 でチェック</p>
 </div>
   
   
@@ -190,6 +245,10 @@ Octopressを使ってみることにしました。</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/20/haml/">Haml/Sassについて</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2011/11/20/octpress-commands/">[Memo]Octpressのコマンド</a>
