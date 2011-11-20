@@ -9,7 +9,17 @@
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="Hamlとは HTMLを生成するためのマークアップ言語 !!! %html %head %title Hello,Haml! %body %1h1 Hello, Haml! Sassとは CSSを生成するためのメタ言語 h1 :color red ">
+  <meta name="description" content="Hamlとは HTMLを生成するためのマークアップ言語 1
+2
+3
+4
+5
+6
+!!!
+%html %head %title Hello,Haml!
+%body %1h1 Hello, Haml! Sassとは CSSを生成するためのメタ言語 1
+2
+h1 :color red インストール &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,29 +101,88 @@
 <div class="entry-content"><h3>Hamlとは</h3>
 
 <ul>
-<li>HTMLを生成するためのマークアップ言語
-  !!!
-  %html
-
-<pre><code>%head
-  %title Hello,Haml!
-</code></pre>
-
-  %body
-
-<pre><code>%1h1 Hello, Haml!
-</code></pre></li>
+<li>HTMLを生成するためのマークアップ言語</li>
 </ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>!!!
+</span><span class='line'>%html
+</span><span class='line'>  %head
+</span><span class='line'>    %title Hello,Haml!
+</span><span class='line'>%body
+</span><span class='line'>  %1h1 Hello, Haml!</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Sassとは</h3>
 
 <ul>
-<li>CSSを生成するためのメタ言語
-  h1
+<li>CSSを生成するためのメタ言語</li>
+</ul>
 
-<pre><code>:color red
-</code></pre></li>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>h1
+</span><span class='line'>  :color red</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>インストール</h3>
+
+<p>rubyのgemを使う</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install haml</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>SassとSCSS</h3>
+
+<h4>Sass</h4>
+
+<ul>
+<li>インデントを使った構文</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>h1
+</span><span class='line'>  :color red</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>SCSS(Sassy CSS)</h4>
+
+<ul>
+<li>CSSの構文を拡張したもの</li>
+</ul>
+
+
+<h3>Sass(SCSS)の使い方</h3>
+
+<p>style.scssをstyle.cssに変換するには、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sass --watch style:scss:style.css</span></code></pre></td></tr></table></div></figure>
+
+
+<p>とコマンドする(これをやっておけば、style.scssファイルを変更すれば勝手に、style.cssに変更される)</p>
+
+<h3>SCSSとCSSの違い</h3>
+
+<ul>
+<li>ネストが使える</li>
+<li>変数が定義できる</li>
+<li>式や関数</li>
+<li>インターポレーション
+** <code>#{$foo}</code>で変数をセレクタ等に利用できる</li>
+<li>ミックスイン
+<strong> @mixinでくくったスタイルを @includeで再利用可能
+</strong> ミックスインでは、引数も設定可能</li>
 </ul>
 
 </div>

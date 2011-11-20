@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Haml, | Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/blog/categories/haml-/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-20T15:12:09+09:00</updated>
+  <updated>2011-11-20T15:29:23+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -22,6 +22,7 @@
 
 <ul>
 <li>HTMLを生成するためのマークアップ言語
+```
   !!!
   %html
 
@@ -32,18 +33,64 @@
   %body
 
 <pre><code>%1h1 Hello, Haml!
-</code></pre></li>
-</ul>
+</code></pre>
 
+```
 
-<h3>Sassとは</h3>
-
-<ul>
+<h3>Sassとは</h3></li>
 <li>CSSを生成するためのメタ言語
+```
   h1
 
 <pre><code>:color red
-</code></pre></li>
+</code></pre>
+
+<p>```</p></li>
+</ul>
+
+
+<h3>インストール</h3>
+
+<p>rubyのgemを使う
+<code>
+gem install haml
+</code></p>
+
+<h3>SassとSCSS</h3>
+
+<h4>Sass</h4>
+
+<ul>
+<li>インデントを使った構文
+<code>
+h1
+:color red
+</code>
+
+<h4>SCSS(Sassy CSS)</h4></li>
+<li>CSSの構文を拡張したもの</li>
+</ul>
+
+
+<h3>Sass(SCSS)の使い方</h3>
+
+<p>style.scssをstyle.cssに変換するには、
+<code>
+sass --watch style:scss:style.css
+</code>
+とコマンドする(これをやっておけば、style.scssファイルを変更すれば勝手に、style.cssに変更される)</p>
+
+<h3>SCSSとCSSの違い</h3>
+
+<ul>
+<li>ネストが使える</li>
+<li>変数が定義できる</li>
+<li>式や関数</li>
+<li>インターポレーション
+** <code>#{$foo}</code>で変数をセレクタ等に利用できる</li>
+<li>ミックスイン
+<strong> @mixinでくくったスタイルを @includeで再利用可能
+</strong> ミックスインでは、引数も設定可能</li>
 </ul>
 
 ]]></content>
