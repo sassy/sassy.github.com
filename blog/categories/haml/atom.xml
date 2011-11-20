@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Sass | Sassy Memo Blog]]></title>
-  <link href="http://sassy.github.com/blog/categories/sass/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Haml | Sassy Memo Blog]]></title>
+  <link href="http://sassy.github.com/blog/categories/haml/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
   <updated>2011-11-20T15:56:14+09:00</updated>
   <id>http://sassy.github.com/</id>

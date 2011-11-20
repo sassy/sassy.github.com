@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Haml, | Sassy Memo Blog]]></title>
-  <link href="http://sassy.github.com/blog/categories/haml-/atom.xml" rel="self"/>
+  <title><![CDATA[Category: SCSS | Sassy Memo Blog]]></title>
+  <link href="http://sassy.github.com/blog/categories/scss/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-20T15:53:44+09:00</updated>
+  <updated>2011-11-20T15:56:14+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
