@@ -5,11 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: SCSS - Sassy Memo Blog</title>
+  <title>ScalaでFizzBuzz - Sassy Memo Blog</title>
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="Category: SCSS">
+  <meta name="description" content="1
+2
+3
+4
+5
+for(i&lt;-1 to 100) if (i%15==0) println("FizzBuzz") else if (i%3==0) println("Fizz") else if (i%5==0) println("Buzz") else println(i) &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sassy.github.comblog/categories/scss">
+  <link rel="canonical" href="http://sassy.github.com/blog/2011/11/21/scala1">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -61,35 +66,112 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: SCSS</h1>
+    
+      <h1 class="entry-title">ScalaでFizzBuzz</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-21T00:06:00+09:00" pubdate data-updated="true">Nov 21<span>st</span>, 2011</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
-
-  
-  <h2>2011</h2>
-
-<article>
-  
-<h1><a href="/blog/2011/11/20/haml/">Haml/Sassについて</a></h1>
-<time datetime="2011-11-20T15:06:00+09:00" pubdate><span class='month'>Nov</span> <span class='day'>20</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/haml/'>Haml</a>, <a class='category' href='/blog/categories/scss/'>SCSS</a>, <a class='category' href='/blog/categories/sass/'>Sass</a></span>
-</footer>
+<div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for(i&lt;-1 to 100)
+</span><span class='line'>    if (i%15==0)  println("FizzBuzz")
+</span><span class='line'>    else if (i%3==0)  println("Fizz")
+</span><span class='line'>    else if (i%5==0) println("Buzz")
+</span><span class='line'>    else println(i)</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>for文はいわゆる反復処理で配列に対して一つ一つアクセスできる
+<code>for (arg &lt;- args)</code>みたいな感じで。
+Cっぽい</p>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for (i = 0; i &lt; 10; i++)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>は、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for (i&lt;-0 to 9)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>のように書く。</p>
+
+<p>if-elseはほとんどC/Javaと同じで、elseifというのは特別に用意されてないっぽいけど、まあ同じように書ける。</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Satoshi Watanabe</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-21T00:06:00+09:00" pubdate data-updated="true">Nov 21<span>st</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/scala/'>Scala</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sassy.github.com/blog/2011/11/21/scala1/" data-via="" data-counturl="http://sassy.github.com/blog/2011/11/21/scala1/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/11/20/less/" title="Previous Post: LESSって何?">&laquo; LESSって何?</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

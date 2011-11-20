@@ -4,7 +4,7 @@
   <title><![CDATA[Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-20T16:25:21+09:00</updated>
+  <updated>2011-11-21T00:19:59+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ScalaでFizzBuzz]]></title>
+    <link href="http://sassy.github.com/blog/2011/11/21/scala1/"/>
+    <updated>2011-11-21T00:06:00+09:00</updated>
+    <id>http://sassy.github.com/blog/2011/11/21/scala1</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for(i&lt;-1 to 100)
+</span><span class='line'>    if (i%15==0)  println("FizzBuzz")
+</span><span class='line'>    else if (i%3==0)  println("Fizz")
+</span><span class='line'>    else if (i%5==0) println("Buzz")
+</span><span class='line'>    else println(i)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>for文はいわゆる反復処理で配列に対して一つ一つアクセスできる
+<code>for (arg &lt;- args)</code>みたいな感じで。
+Cっぽい</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for (i = 0; i &lt; 10; i++)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>は、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>for (i&lt;-0 to 9)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>のように書く。</p>
+
+<p>if-elseはほとんどC/Javaと同じで、elseifというのは特別に用意されてないっぽいけど、まあ同じように書ける。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[LESSって何?]]></title>
