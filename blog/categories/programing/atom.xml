@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programing | Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/blog/categories/programing/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-27T01:57:07+09:00</updated>
+  <updated>2011-11-27T02:07:07+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[クロージとは]]></title>
+    <title type="html"><![CDATA[クロージャとは]]></title>
     <link href="http://sassy.github.com/blog/2011/11/26/closure/"/>
     <updated>2011-11-26T23:42:00+09:00</updated>
     <id>http://sassy.github.com/blog/2011/11/26/closure</id>
