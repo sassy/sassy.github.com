@@ -9,12 +9,10 @@
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="1
+  <meta name="description" content="クロージャとは 関数の一種
+引数以外の変数は関数が作成された時点で決定する schemeでいうところの、 1
 2
-3
-4
-5
-for(i&lt;-1 to 100) if (i%15==0) println("FizzBuzz") else if (i%3==0) println("Fizz") else if (i%5==0) println("Buzz") else println(i) &hellip;">
+(define (f x) (lambda (y) (+ x y))) という関数を定義した場合、この関数を実行すると (lambda (y) (+ x y))という関数が返ってくる。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +65,104 @@ for(i&lt;-1 to 100) if (i%15==0) println("FizzBuzz") else if (i%3==0) println("F
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/26/closure/">クロージとは</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-26T23:42:00+09:00" pubdate data-updated="true">Nov 26<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>クロージャとは</h2>
+
+<ul>
+<li>関数の一種</li>
+<li>引数以外の変数は関数が作成された時点で決定する</li>
+</ul>
+
+
+<p>schemeでいうところの、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(define (f x)
+</span><span class='line'>  (lambda (y) (+ x y)))</span></code></pre></td></tr></table></div></figure>
+
+
+<p>という関数を定義した場合、この関数を実行すると <code>(lambda (y) (+ x y))</code>という関数が返ってくる。この関数のxは、関数fを実行したときに決定される。</p>
+
+<p>例えば、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(f 3)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と実行した場合、xはこのとき渡した値である、3を参照する。
+例えば、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(define (f x)
+</span><span class='line'>  (let ((a x))
+</span><span class='line'>    (lambda (y) 
+</span><span class='line'>      (set! a (+ a 1)) 
+</span><span class='line'>      (+ a y)
+</span><span class='line'>      )))
+</span><span class='line'>(define g (f 3))</span></code></pre></td></tr></table></div></figure>
+
+
+<p>と書いた場合、<code>(g 3)</code>を実行すると、最初は7,次は8と毎回xの値が増えて行く。</p>
+
+<p>上記の変数aは、この<code>(define (f x) ...)</code>のスコープでした参照できず、その外側の関数からは参照できない。</p>
+
+<h3>JavaScript</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function f() {
+</span><span class='line'>  var i = 0;
+</span><span class='line'>  return function() {i = i+1; return i;}
+</span><span class='line'>}
+</span><span class='line'>g = new f();</span></code></pre></td></tr></table></div></figure>
+
+
+<p>のように書けば、<code>g();</code>を実行するたびに、1,2と値が増えて行く。
+このiは、外側からはアクセスできない。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -722,6 +818,10 @@ Octopressを使ってみることにしました。</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2011/11/26/closure/">クロージとは</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2011/11/21/scala1/">ScalaでFizzBuzz</a>
       </li>
     
@@ -735,10 +835,6 @@ Octopressを使ってみることにしました。</p>
     
       <li class="post">
         <a href="/blog/2011/11/20/octpress-commands/">[Memo]Octpressのコマンド</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/20/first-article/">First Article</a>
       </li>
     
   </ul>

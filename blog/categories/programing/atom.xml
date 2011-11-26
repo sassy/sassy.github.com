@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: programing | Sassy Memo Blog]]></title>
+  <link href="http://sassy.github.com/blog/categories/programing/atom.xml" rel="self"/>
+  <link href="http://sassy.github.com/"/>
+  <updated>2011-11-27T01:57:07+09:00</updated>
+  <id>http://sassy.github.com/</id>
+  <author>
+    <name><![CDATA[Satoshi Watanabe]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[クロージとは]]></title>
+    <link href="http://sassy.github.com/blog/2011/11/26/closure/"/>
+    <updated>2011-11-26T23:42:00+09:00</updated>
+    <id>http://sassy.github.com/blog/2011/11/26/closure</id>
+    <content type="html"><![CDATA[<h2>クロージャとは</h2>
+
+<ul>
+<li>関数の一種</li>
+<li>引数以外の変数は関数が作成された時点で決定する</li>
+</ul>
+
+
+<p>schemeでいうところの、
+<code>
+(define (f x)
+  (lambda (y) (+ x y)))
+</code>
+という関数を定義した場合、この関数を実行すると <code>(lambda (y) (+ x y))</code>という関数が返ってくる。この関数のxは、関数fを実行したときに決定される。</p>
+
+<p>例えば、
+<code>
+(f 3)
+</code>
+と実行した場合、xはこのとき渡した値である、3を参照する。
+例えば、
+```
+(define (f x)
+  (let ((a x))</p>
+
+<pre><code>(lambda (y) 
+  (set! a (+ a 1)) 
+  (+ a y)
+  )))
+</code></pre>
+
+<p>(define g (f 3))
+<code>``
+と書いた場合、</code>(g 3)`を実行すると、最初は7,次は8と毎回xの値が増えて行く。</p>
+
+<p>上記の変数aは、この<code>(define (f x) ...)</code>のスコープでした参照できず、その外側の関数からは参照できない。</p>
+
+<h3>JavaScript</h3>
+
+<p><code>
+function f() {
+  var i = 0;
+  return function() {i = i+1; return i;}
+}
+g = new f();
+</code>
+のように書けば、<code>g();</code>を実行するたびに、1,2と値が増えて行く。
+このiは、外側からはアクセスできない。</p>
+]]></content>
+  </entry>
+  
+</feed>
