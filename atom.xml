@@ -4,7 +4,7 @@
   <title><![CDATA[Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-27T16:51:45+09:00</updated>
+  <updated>2011-11-27T17:54:30+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -31,7 +31,11 @@
 <ul>
 <li>array()関数で配列初期化</li>
 <li>[]で配列アクセス
-** 添字は0から</li>
+
+<ul>
+<li>添字は0から</li>
+</ul>
+</li>
 <li>以下のように配列に要素を追加することも可能</li>
 </ul>
 
@@ -75,8 +79,12 @@
 
 <ul>
 <li>キーとして使えるのは、
-<strong> 整数
-</strong> 文字列</li>
+
+<ul>
+<li>整数</li>
+<li>文字列</li>
+</ul>
+</li>
 </ul>
 
 
@@ -170,15 +178,19 @@
 
 <ul>
 <li>sortの関数は以下
-<strong> sort 配列のsortを昇順に並び替える
-</strong> rsort 配列のsortを降順に並び替える
-<strong> ksort 配列をキーに対して昇順に並び替える
-</strong> krsort 配列をキーに対して降順に並び替える
-<strong> asort キーと値の関係を維持しつつ値に対して昇順に並び替える
-</strong> arsort キーと値の関係を維持しつつ値に対して降順に並び替える
-<strong> usort ユーザ定義の比較関数を用いて並び替える
-</strong> uasort ユーザ定義の比較関数を用いてキーと値の関係を維持しつつ並び替える
-** uksort ユーザ定義の比較関数を用いてキーを並び替える</li>
+
+<ul>
+<li>sort 配列のsortを昇順に並び替える</li>
+<li>rsort 配列のsortを降順に並び替える</li>
+<li>ksort 配列をキーに対して昇順に並び替える</li>
+<li>krsort 配列をキーに対して降順に並び替える</li>
+<li>asort キーと値の関係を維持しつつ値に対して昇順に並び替える</li>
+<li>arsort キーと値の関係を維持しつつ値に対して降順に並び替える</li>
+<li>usort ユーザ定義の比較関数を用いて並び替える</li>
+<li>uasort ユーザ定義の比較関数を用いてキーと値の関係を維持しつつ並び替える</li>
+<li>uksort ユーザ定義の比較関数を用いてキーを並び替える</li>
+</ul>
+</li>
 </ul>
 
 
@@ -315,10 +327,14 @@
 <ul>
 <li>PHPは引数に関数を渡すことができる</li>
 <li>引数に渡す方法は以下
-<strong> 関数名を文字列
-</strong> 無名関数
-<strong> クラスやクラスのインスタンスとメソッド名を持つ配列
-</strong> クラスの静的メソッドを表す文字列</li>
+
+<ul>
+<li>関数名を文字列</li>
+<li>無名関数</li>
+<li>クラスやクラスのインスタンスとメソッド名を持つ配列</li>
+<li>クラスの静的メソッドを表す文字列</li>
+</ul>
+</li>
 <li>下記は <code>array_map()</code>という配列一つ一つに渡された関数を適用する関数を使用した例</li>
 </ul>
 
