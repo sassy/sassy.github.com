@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>PHPの配列 - Sassy Memo Blog</title>
+  <meta name="author" content="Satoshi Watanabe">
+
+  
+  <meta name="description" content="PHPの配列 初期化 1
+2
+$member = array('Atsuko', 'Yuko', 'Haruna',);
+echo $member[0], PHP_EOL; // Atsuko array()関数で配列初期化
+[]で配列アクセス
+** 添字は0から &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sassy.github.com/blog/2011/11/27/php-array">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Sassy Memo Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Sassy Memo Blog</a></h1>
+  
+    <h2>A Technical Memo.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:sassy.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">PHPの配列</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-27T14:10:00+09:00" pubdate data-updated="true">Nov 27<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>PHPの配列</h2>
+
+<h3>初期化</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$member = array('Atsuko', 'Yuko', 'Haruna',);
+</span><span class='line'>echo $member[0], PHP_EOL; // Atsuko</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>array()関数で配列初期化</li>
+<li>[]で配列アクセス
+** 添字は0から</li>
+<li>以下のように配列に要素を追加することも可能</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$member[] = 'Mariko';
+</span><span class='line'>$member[] = 'Mayu';</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>連想配列</h3>
+
+<ul>
+<li>要素に名前を付けることが可能</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>array([キー =&gt; 要素 [,...] ])</span></code></pre></td></tr></table></div></figure>
+
+
+<p>例えば、下記のようになる。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>$fruits_color = array(
+</span><span class='line'>  'apple' =&gt; 'red',
+</span><span class='line'>  'banana' =&gt; 'yellow',
+</span><span class='line'>  'orange' =&gt; 'orange',
+</span><span class='line'>);
+</span><span class='line'>echo $fruits_color['banana'], PHP_EOL; //yellow
+</span><span class='line'>?&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>キーとして使えるのは、
+<strong> 整数
+</strong> 文字列</li>
+</ul>
+
+
+<h3>配列の演算</h3>
+
+<p>TBD</p>
+
+<h3>foreach</h3>
+
+<ul>
+<li>配列やIteratorインターフェースを実装したクラスのオブジェクトに使用可能</li>
+<li>データ構造を順番に処理するための制御構造</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>foreach(反復可能なデータ構造 as 要素) {
+</span><span class='line'>  処理
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>$no3b = array('Kojiharu', 'Takamina', 'Miichan');
+</span><span class='line'>foreach ($no3b as $member) {
+</span><span class='line'>  echo $member, PHP_EOL;
+</span><span class='line'>}
+</span><span class='line'>?&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>参照も使用可能</li>
+<li>参照を使うと元の配列の要素を変更することが可能</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>foreach(反復可能なデータ構造 as &要素) {
+</span><span class='line'>  処理
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>array_shift()</h3>
+
+<ul>
+<li>配列の先頭を取り出す</li>
+<li>先頭要素は削除される
+
+<h3>array_unshift()</h3></li>
+<li>配列の先頭に要素を追加する
+
+<h3>array_pop()</h3></li>
+<li>配列の末尾から要素を取り出す
+
+<h3>array_push()</h3></li>
+<li>配列の末尾に要素を追加する</li>
+</ul>
+
+
+<h3>sort</h3>
+
+<ul>
+<li>配列をsortする</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>$nums = array(4, 7, 9, 5, 1, 3, 6,);
+</span><span class='line'>sort($nums);
+</span><span class='line'>foreach ($nums as $num) {
+</span><span class='line'>  echo $num, PHP_EOL;
+</span><span class='line'>}
+</span><span class='line'>?&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>sortの関数は以下
+<strong> sort 配列のsortを昇順に並び替える
+</strong> rsort 配列のsortを降順に並び替える
+<strong> ksort 配列をキーに対して昇順に並び替える
+</strong> krsort 配列をキーに対して降順に並び替える
+<strong> asort キーと値の関係を維持しつつ値に対して昇順に並び替える
+</strong> arsort キーと値の関係を維持しつつ値に対して降順に並び替える
+<strong> usort ユーザ定義の比較関数を用いて並び替える
+</strong> uasort ユーザ定義の比較関数を用いてキーと値の関係を維持しつつ並び替える
+** uksort ユーザ定義の比較関数を用いてキーを並び替える</li>
+</ul>
+
+
+<h3>list()</h3>
+
+<ul>
+<li>配列の各要素を一度に変数に代入する</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>$members = array('Atuko', 'Yuko', 'Yuki');
+</span><span class='line'>list($first, $second, $third) = $members;
+</span><span class='line'>echo $first, PHP_EOL;
+</span><span class='line'>echo $second, PHP_EOL;
+</span><span class='line'>echo $third, PHP_EOL;
+</span><span class='line'>?&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>explode</h3>
+
+<ul>
+<li>文字列を特定の文字列で分割し、配列にする</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>$member_str = "Atuko:Yuko:Haruna";
+</span><span class='line'>$members = explode(':', $member_str);
+</span><span class='line'>foreach($members as $member) {
+</span><span class='line'>  echo $member, PHP_EOL;
+</span><span class='line'>}
+</span><span class='line'>?&gt;</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Satoshi Watanabe</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-27T14:10:00+09:00" pubdate data-updated="true">Nov 27<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/php/'>PHP</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sassy.github.com/blog/2011/11/27/php-array/" data-via="" data-counturl="http://sassy.github.com/blog/2011/11/27/php-array/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/11/27/php-function/" title="Previous Post: PHPの関数">&laquo; PHPの関数</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/27/php-array/">PHPの配列</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/27/php-function/">PHPの関数</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/26/closure/">クロージャとは</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/21/scala1/">ScalaでFizzBuzz</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/20/less/">LESSって何?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2011 - Satoshi Watanabe -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
