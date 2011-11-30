@@ -9,11 +9,20 @@
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="PHPの配列 初期化 1
+  <meta name="description" content="PHPのファイル処理 1
 2
-$member = array('Atsuko', 'Yuko', 'Haruna',);
-echo $member[0], PHP_EOL; // Atsuko array()関数で配列初期化
-[]で配列アクセス 添字は0から &hellip;">
+3
+4
+5
+6
+7
+8
+&lt;?php
+$file = fopen("./file.txt", "r");
+while (!feof($file)) { $line = fgets($file); echo $line;
+}
+fclose($file);
+?&gt &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +75,78 @@ echo $member[0], PHP_EOL; // Atsuko array()関数で配列初期化
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/01/php-file/">PHPのファイル処理</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-01T07:30:00+09:00" pubdate data-updated="true">Dec 1<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>PHPのファイル処理</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>$file = fopen("./file.txt", "r");
+</span><span class='line'>while (!feof($file)) {
+</span><span class='line'>  $line = fgets($file);
+</span><span class='line'>  echo $line;
+</span><span class='line'>}
+</span><span class='line'>fclose($file);
+</span><span class='line'>?&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>fopen</h4>
+
+<ul>
+<li>ファイルを開く</li>
+<li>戻り値はファイルハンドラ</li>
+<li>第２引数のrは読み取り専用, wは書き込み専用, r+/w+は読み込み／書き込み, aは追記, a+は追記と読み込み
+
+<h4>fclose</h4></li>
+<li>ファイルを閉じる
+
+<h4>feof</h4></li>
+<li>ファイルを最後までよんだかチェックする
+
+<h4>fgets</h4></li>
+<li>ファイルから１行読み込む</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1371,6 +1452,10 @@ Octopressを使ってみることにしました。</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2011/12/01/php-file/">PHPのファイル処理</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2011/11/27/php-array/">PHPの配列</a>
       </li>
     
@@ -1384,10 +1469,6 @@ Octopressを使ってみることにしました。</p>
     
       <li class="post">
         <a href="/blog/2011/11/21/scala1/">ScalaでFizzBuzz</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/20/less/">LESSって何?</a>
       </li>
     
   </ul>

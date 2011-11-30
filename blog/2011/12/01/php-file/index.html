@@ -5,12 +5,24 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>First Article - Sassy Memo Blog</title>
+  <title>PHPのファイル処理 - Sassy Memo Blog</title>
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="Octopress+GitHubでブログたててみました。 とある事情により、
-Octopressを使ってみることにしました。 以下を参考にしました。 http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/ &hellip;">
+  <meta name="description" content="PHPのファイル処理 1
+2
+3
+4
+5
+6
+7
+8
+&lt;?php
+$file = fopen("./file.txt", "r");
+while (!feof($file)) { $line = fgets($file); echo $line;
+}
+fclose($file);
+?&gt &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +31,7 @@ Octopressを使ってみることにしました。 以下を参考にしまし�
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sassy.github.com/blog/2011/11/20/first-article">
+  <link rel="canonical" href="http://sassy.github.com/blog/2011/12/01/php-file">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -66,7 +78,7 @@ Octopressを使ってみることにしました。 以下を参考にしまし�
   
   <header>
     
-      <h1 class="entry-title">First Article</h1>
+      <h1 class="entry-title">PHPのファイル処理</h1>
     
     
       <p class="meta">
@@ -82,30 +94,50 @@ Octopressを使ってみることにしました。 以下を参考にしまし�
   
 
 
-<time datetime="2011-11-20T01:42:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
+<time datetime="2011-12-01T07:30:00+09:00" pubdate data-updated="true">Dec 1<span>st</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2>Octopress+GitHubでブログたててみました。</h2>
+<div class="entry-content"><h2>PHPのファイル処理</h2>
 
-<p><a href="http://twitter.com/#!/omo2009/status/137904652208451584">とある事情</a>により、
-Octopressを使ってみることにしました。</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>$file = fopen("./file.txt", "r");
+</span><span class='line'>while (!feof($file)) {
+</span><span class='line'>  $line = fgets($file);
+</span><span class='line'>  echo $line;
+</span><span class='line'>}
+</span><span class='line'>fclose($file);
+</span><span class='line'>?&gt;</span></code></pre></td></tr></table></div></figure>
 
-<p>以下を参考にしました。</p>
 
-<blockquote><p><a href="http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/">http://glidenote.github.com/blog/2011/11/07/install-octopress-on-github/</a></p></blockquote>
+<h4>fopen</h4>
 
-<p>Ocropressのサイトは以下です。</p>
+<ul>
+<li>ファイルを開く</li>
+<li>戻り値はファイルハンドラ</li>
+<li>第２引数のrは読み取り専用, wは書き込み専用, r+/w+は読み込み／書き込み, aは追記, a+は追記と読み込み
 
-<blockquote><p><a href="http://octopress.org/">http://octopress.org/</a></p></blockquote>
+<h4>fclose</h4></li>
+<li>ファイルを閉じる
 
-<p>ちなみに私のMacのrubyのversionは1.8.7だったので、せっかくなので、rvmを導入しました。
-以下を参考にインストール</p>
+<h4>feof</h4></li>
+<li>ファイルを最後までよんだかチェックする
 
-<blockquote><p><a href="https://rvm.beginrescueend.com/rvm/install/">https://rvm.beginrescueend.com/rvm/install/</a></p></blockquote>
+<h4>fgets</h4></li>
+<li>ファイルから１行読み込む</li>
+</ul>
+
 </div>
 
 
@@ -128,15 +160,21 @@ Octopressを使ってみることにしました。</p>
   
 
 
-<time datetime="2011-11-20T01:42:00+09:00" pubdate data-updated="true">Nov 20<span>th</span>, 2011</time>
+<time datetime="2011-12-01T07:30:00+09:00" pubdate data-updated="true">Dec 1<span>st</span>, 2011</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/php/'>PHP</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sassy.github.com/blog/2011/11/20/first-article/" data-via="" data-counturl="http://sassy.github.com/blog/2011/11/20/first-article/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sassy.github.com/blog/2011/12/01/php-file/" data-via="" data-counturl="http://sassy.github.com/blog/2011/12/01/php-file/" >Tweet</a>
   
   
   
@@ -145,8 +183,8 @@ Octopressを使ってみることにしました。</p>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2011/11/27/php-array/" title="Previous Post: PHPの配列">&laquo; PHPの配列</a>
       
-        <a class="basic-alignment right" href="/blog/2011/11/20/octpress-commands/" title="next Post: [Memo]Octpressのコマンド">[Memo]Octpressのコマンド &raquo;</a>
       
     </p>
   </footer>

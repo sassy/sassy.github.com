@@ -4,7 +4,7 @@
   <title><![CDATA[Category: PHP | Sassy Memo Blog]]></title>
   <link href="http://sassy.github.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-11-27T18:05:43+09:00</updated>
+  <updated>2011-12-01T07:35:51+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[PHPのファイル処理]]></title>
+    <link href="http://sassy.github.com/blog/2011/12/01/php-file/"/>
+    <updated>2011-12-01T07:30:00+09:00</updated>
+    <id>http://sassy.github.com/blog/2011/12/01/php-file</id>
+    <content type="html"><![CDATA[<h2>PHPのファイル処理</h2>
+
+<p><code>
+&lt;?php
+$file = fopen("./file.txt", "r");
+while (!feof($file)) {
+  $line = fgets($file);
+  echo $line;
+}
+fclose($file);
+?&gt;
+</code></p>
+
+<h4>fopen</h4>
+
+<ul>
+<li>ファイルを開く</li>
+<li>戻り値はファイルハンドラ</li>
+<li>第２引数のrは読み取り専用, wは書き込み専用, r+/w+は読み込み／書き込み, aは追記, a+は追記と読み込み
+
+<h4>fclose</h4></li>
+<li>ファイルを閉じる
+
+<h4>feof</h4></li>
+<li>ファイルを最後までよんだかチェックする
+
+<h4>fgets</h4></li>
+<li>ファイルから１行読み込む</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[PHPの配列]]></title>
