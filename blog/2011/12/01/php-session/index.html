@@ -5,11 +5,20 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Scala - Sassy Tech Log</title>
+  <title>PHPのsession_start() - Sassy Tech Log</title>
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="Category: Scala">
+  <meta name="description" content="session_start() session_start()はセッションを作成する関数
+$_SESSIONはセッション変数
+セッションはクッキーにセッションIDを保存する。セッションIDにひもづいたセッション変数はサーバー側に保存 1
+2
+3
+4
+5
+6
+7
+&lt;?php &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +27,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sassy.github.comblog/categories/scala">
+  <link rel="canonical" href="http://sassy.github.com/blog/2011/12/01/php-session">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -61,35 +70,122 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Scala</h1>
+    
+      <h1 class="entry-title">PHPのsession_start()</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-01T23:19:00+09:00" pubdate data-updated="true">Dec 1<span>st</span>, 2011</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><h2>session_start()</h2>
 
-  
-  <h2>2011</h2>
-
-<article>
-  
-<h1><a href="/blog/2011/11/21/scala1/">ScalaでFizzBuzz</a></h1>
-<time datetime="2011-11-21T00:06:00+09:00" pubdate><span class='month'>Nov</span> <span class='day'>21</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/scala/'>Scala</a></span>
-</footer>
+<ul>
+<li>session_start()はセッションを作成する関数</li>
+<li><code>$_SESSION</code>はセッション変数</li>
+<li>セッションはクッキーにセッションIDを保存する。セッションIDにひもづいたセッション変数はサーバー側に保存</li>
+</ul>
 
 
-</article>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>session_start();
+</span><span class='line'>
+</span><span class='line'>$_SESSION['favcolor'] = 'green';
+</span><span class='line'>$_SESSION['animal'] = 'cat';
+</span><span class='line'>$_SESSION['time'] = time();
+</span><span class='line'>?&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>isset()</h3>
+
+<ul>
+<li>変数が保存されているかどうかを確かめる</li>
+<li>`isset($_SESSION[&#8216;foo&#8217;])&#8217;のようにして、セッション変数に値が入っているかを確かめることが可能</li>
+</ul>
+
+
+<h3>$_REQUEST</h3>
+
+<ul>
+<li>$<em>GET, $</em>POST, $_COOKIEを合わせた連想配列</li>
+</ul>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Satoshi Watanabe</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-01T23:19:00+09:00" pubdate data-updated="true">Dec 1<span>st</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/php/'>PHP</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sassy.github.com/blog/2011/12/01/php-session/" data-via="" data-counturl="http://sassy.github.com/blog/2011/12/01/php-session/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/12/01/php-file/" title="Previous Post: PHPのファイル処理">&laquo; PHPのファイル処理</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

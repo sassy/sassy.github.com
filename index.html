@@ -5,24 +5,20 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Sassy Memo Blog</title>
+  <title>Sassy Tech Log</title>
   <meta name="author" content="Satoshi Watanabe">
 
   
-  <meta name="description" content="PHPのファイル処理 1
+  <meta name="description" content="session_start() session_start()はセッションを作成する関数
+$_SESSIONはセッション変数
+セッションはクッキーにセッションIDを保存する。セッションIDにひもづいたセッション変数はサーバー側に保存 1
 2
 3
 4
 5
 6
 7
-8
-&lt;?php
-$file = fopen("./file.txt", "r");
-while (!feof($file)) { $line = fgets($file); echo $line;
-}
-fclose($file);
-?&gt &hellip;">
+&lt;?php &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -37,7 +33,7 @@ fclose($file);
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Sassy Memo Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Sassy Tech Log" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -48,7 +44,7 @@ fclose($file);
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">Sassy Memo Blog</a></h1>
+  <h1><a href="/">Sassy Tech Log</a></h1>
   
     <h2>A Technical Memo.</h2>
   
@@ -75,6 +71,80 @@ fclose($file);
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/01/php-session/">PHPのsession_start()</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-01T23:19:00+09:00" pubdate data-updated="true">Dec 1<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>session_start()</h2>
+
+<ul>
+<li>session_start()はセッションを作成する関数</li>
+<li><code>$_SESSION</code>はセッション変数</li>
+<li>セッションはクッキーにセッションIDを保存する。セッションIDにひもづいたセッション変数はサーバー側に保存</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>session_start();
+</span><span class='line'>
+</span><span class='line'>$_SESSION['favcolor'] = 'green';
+</span><span class='line'>$_SESSION['animal'] = 'cat';
+</span><span class='line'>$_SESSION['time'] = time();
+</span><span class='line'>?&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>isset()</h3>
+
+<ul>
+<li>変数が保存されているかどうかを確かめる</li>
+<li>`isset($_SESSION[&#8216;foo&#8217;])&#8217;のようにして、セッション変数に値が入っているかを確かめることが可能</li>
+</ul>
+
+
+<h3>$_REQUEST</h3>
+
+<ul>
+<li>$<em>GET, $</em>POST, $_COOKIEを合わせた連想配列</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1452,6 +1522,10 @@ Octopressを使ってみることにしました。</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2011/12/01/php-session/">PHPのsession_start()</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2011/12/01/php-file/">PHPのファイル処理</a>
       </li>
     
@@ -1465,10 +1539,6 @@ Octopressを使ってみることにしました。</p>
     
       <li class="post">
         <a href="/blog/2011/11/26/closure/">クロージャとは</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/21/scala1/">ScalaでFizzBuzz</a>
       </li>
     
   </ul>

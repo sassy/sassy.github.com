@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: PHP | Sassy Memo Blog]]></title>
+  <title><![CDATA[Category: PHP | Sassy Tech Log]]></title>
   <link href="http://sassy.github.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-12-01T07:35:51+09:00</updated>
+  <updated>2011-12-07T00:33:17+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[PHPのsession_start()]]></title>
+    <link href="http://sassy.github.com/blog/2011/12/01/php-session/"/>
+    <updated>2011-12-01T23:19:00+09:00</updated>
+    <id>http://sassy.github.com/blog/2011/12/01/php-session</id>
+    <content type="html"><![CDATA[<h2>session_start()</h2>
+
+<ul>
+<li>session_start()はセッションを作成する関数</li>
+<li><code>$_SESSION</code>はセッション変数</li>
+<li>セッションはクッキーにセッションIDを保存する。セッションIDにひもづいたセッション変数はサーバー側に保存
+```
+&lt;?php
+session_start();</li>
+</ul>
+
+
+<p>$<em>SESSION['favcolor'] = 'green';
+$</em>SESSION['animal'] = 'cat';
+$_SESSION['time'] = time();
+?>
+```</p>
+
+<h3>isset()</h3>
+
+<ul>
+<li>変数が保存されているかどうかを確かめる</li>
+<li>`isset($_SESSION['foo'])'のようにして、セッション変数に値が入っているかを確かめることが可能</li>
+</ul>
+
+
+<h3>$_REQUEST</h3>
+
+<ul>
+<li>$<em>GET, $</em>POST, $_COOKIEを合わせた連想配列</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[PHPのファイル処理]]></title>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Sassy Memo Blog]]></title>
+  <title><![CDATA[Sassy Tech Log]]></title>
   <link href="http://sassy.github.com/atom.xml" rel="self"/>
   <link href="http://sassy.github.com/"/>
-  <updated>2011-12-01T07:35:51+09:00</updated>
+  <updated>2011-12-07T00:33:17+09:00</updated>
   <id>http://sassy.github.com/</id>
   <author>
     <name><![CDATA[Satoshi Watanabe]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[PHPのsession_start()]]></title>
+    <link href="http://sassy.github.com/blog/2011/12/01/php-session/"/>
+    <updated>2011-12-01T23:19:00+09:00</updated>
+    <id>http://sassy.github.com/blog/2011/12/01/php-session</id>
+    <content type="html"><![CDATA[<h2>session_start()</h2>
+
+<ul>
+<li>session_start()はセッションを作成する関数</li>
+<li><code>$_SESSION</code>はセッション変数</li>
+<li>セッションはクッキーにセッションIDを保存する。セッションIDにひもづいたセッション変数はサーバー側に保存</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?php
+</span><span class='line'>session_start();
+</span><span class='line'>
+</span><span class='line'>$_SESSION['favcolor'] = 'green';
+</span><span class='line'>$_SESSION['animal'] = 'cat';
+</span><span class='line'>$_SESSION['time'] = time();
+</span><span class='line'>?&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>isset()</h3>
+
+<ul>
+<li>変数が保存されているかどうかを確かめる</li>
+<li>`isset($_SESSION[&#8216;foo&#8217;])&#8217;のようにして、セッション変数に値が入っているかを確かめることが可能</li>
+</ul>
+
+
+<h3>$_REQUEST</h3>
+
+<ul>
+<li>$<em>GET, $</em>POST, $_COOKIEを合わせた連想配列</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[PHPのファイル処理]]></title>
