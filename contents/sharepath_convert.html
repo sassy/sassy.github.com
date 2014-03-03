@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>共有フォルダのpath変換(Win to Mac)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      function func() {
+        var ret = document.getElementById("ret");
+        var src_path = document.convert_form.src.value;
+        if (!src_path.match(/^\\\\*/)) {
+          ret.innerHTML = "入力する文字列が違います。"
+          return;
+        }
+        replace_path = src_path.replace(/\\/g, "/");
+        document.convert_form.dst.value = "smb:" + replace_path;
+        ret.innerHTML = "変換完了しました。"
+      }
+    </script>
+  </head>
+  <body>
+    <h1 class="container">共有フォルダのpath変換(Win to Mac)</h1>
+    <div class="container">
+      Windowsの共有フォルダのPath(＼２つで始まるPath)はMacでは扱えないので、Macでも扱えるようにsmb://形式に変換する
+    </div>
+    <br>
+    <form name="convert_form" class="container">
+      Windows:<input type="text" name="src">
+      <input type="button" name="triger" value="変換" onclick="func()"><br>
+      Mac:<input type="text" name="dst">
+    </form>
+    <div id="ret">
+  </body>
+</html>
